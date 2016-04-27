@@ -88,7 +88,8 @@ main() {
   while true; do
     read -p "Create symlink in root home dir (sudo required)? " yn
     case $yn in
-        [Yy]* ) echo "Backing up /root/.zshrc " && sudo mv /root/.zshrc /root/.zshrc_back
+        [Yy]* ) printf "${BLUE}Backing up /root/.zshrc ${NORMAL}\n" 
+                sudo mv /root/.zshrc /root/.zshrc_back;
                 sudo ln -s ~/.zshrc /root/.zshrc; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
