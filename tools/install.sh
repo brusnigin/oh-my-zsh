@@ -85,7 +85,14 @@ main() {
   export PATH=\"$PATH\"
   " ~/.zshrc > ~/.zshrc-omztemp
   mv -f ~/.zshrc-omztemp ~/.zshrc
-
+  while true; do
+    read -p "Create symlink in root home dir?" yn
+    case $yn in
+        [Yy]* ) ln -s ~/.zshrc /root/.zshrc; break;;
+        [Nn]* ) exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+  done
   # If this user's login shell is not already "zsh", attempt to switch.
   TEST_CURRENT_SHELL=$(expr "$SHELL" : '.*/\(.*\)')
   if [ "$TEST_CURRENT_SHELL" != "zsh" ]; then
