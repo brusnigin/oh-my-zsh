@@ -12,17 +12,12 @@
 # ------------------------------------------------------------------------------
 
 # Customizable parameters.
+PROMPT_PATH_MAX_LENGTH=30
 PROMPT_DEFAULT_END=❯
 PROMPT_ROOT_END=❯❯❯
 PROMPT_SUCCESS_COLOR=$FG[071]
 PROMPT_FAILURE_COLOR=$FG[124]
 PROMPT_VCS_INFO_COLOR=$FG[242]
-
-
-# Grab the current date (%D) and time (%T) wrapped in {}: {%D %T}
-DALLAS_CURRENT_TIME_="%{$fg[white]%}{%{$fg[yellow]%}%D %T%{$fg[white]%}} %{$reset_color%}"
-
-
 
 # Set required options.
 setopt promptsubst
@@ -44,5 +39,5 @@ zstyle ':vcs_info:*:*' formats "%S" "%r/%s/%b %u%c"
 zstyle ':vcs_info:*:*' nvcsformats "%~" ""
 
 # Define prompts.
-PROMPT="%(0?.%{$PROMPT_SUCCESS_COLOR%}.%{$PROMPT_FAILURE_COLOR%})${SSH_TTY:+[%n@%m]}%{$FX[bold]%}%(!.$PROMPT_ROOT_END.$PROMPT_DEFAULT_END)%{$FX[no-bold]%}%{$FX[reset]%} "
+PROMPT="%(0?.%{$PROMPT_SUCCESS_COLOR%}.%{$PROMPT_FAILURE_COLOR%})${SSH_TTY:+[%n@%m]}%{$FX[bold]%}%$PROMPT_PATH_MAX_LENGTH<..<"'${vcs_info_msg_0_%%.}'"%<<%(!.$PROMPT_ROOT_END.$PROMPT_DEFAULT_END)%{$FX[no-bold]%}%{$FX[reset]%} "
 RPROMPT="%{$PROMPT_VCS_INFO_COLOR%}"'$vcs_info_msg_1_'"%{$FX[reset]%}"

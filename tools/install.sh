@@ -86,9 +86,11 @@ main() {
   " ~/.zshrc > ~/.zshrc-omztemp
   mv -f ~/.zshrc-omztemp ~/.zshrc
   while true; do
-    read -p "Create symlink in root home dir?" yn
+    read -p "Create symlink in root home dir (sudo required)? " yn
     case $yn in
-        [Yy]* ) ln -s ~/.zshrc /root/.zshrc; break;;
+        [Yy]* ) printf "${BLUE}Backing up /root/.zshrc ${NORMAL}\n" 
+                sudo mv /root/.zshrc /root/.zshrc_back;
+                sudo ln -s ~/.zshrc /root/.zshrc; break;;
         [Nn]* ) exit;;
         * ) echo "Please answer yes or no.";;
     esac
