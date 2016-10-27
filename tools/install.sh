@@ -53,10 +53,7 @@ main() {
     echo "Error: git is not installed"
     exit 1
   }
-  env git clone --depth=1 https://github.com/brusnigin/oh-my-zsh.git $ZSH || {
-    printf "Error: git clone of oh-my-zsh repo failed\n"
-    exit 1
-  }
+
 
   # The Windows (MSYS) Git is not compatible with normal use on cygwin
   if [ "$OSTYPE" = cygwin ]; then
@@ -67,7 +64,11 @@ main() {
     fi
   fi
   }
-
+  
+  env git clone --depth=1 https://github.com/brusnigin/oh-my-zsh.git $ZSH || {
+    printf "Error: git clone of oh-my-zsh repo failed\n"
+    exit 1
+  }
 
   printf "${BLUE}Looking for an existing zsh config...${NORMAL}\n"
   if [ -f ~/.zshrc ] || [ -h ~/.zshrc ]; then
