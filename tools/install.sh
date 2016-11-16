@@ -2,6 +2,7 @@ main() {
   # Use colors, but only if connected to a terminal, and that terminal
   # supports them.
   ZSH=~/.oh-my-zsh/
+  ls -s ~/oh-my-zsh/ ~/.oh-my-zsh/
   if which tput >/dev/null 2>&1; then
       ncolors=$(tput colors)
   fi
