@@ -32,6 +32,14 @@ Oh My Zsh is installed by running one of the following commands in your terminal
 #### via curl
 
 ```shell
+yum install epel-release nload tcpdump zsh git vim bind-utils -y
+mv ~/oh-my-zsh/ ~/.oh-my-zsh
+cp -r ~/oh-my-zsh/templates/zshrc.zsh-template ~/zshrc
+chsh -s /bin/zsh
+zsh
+```
+
+```shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/brusnigin/oh-my-zsh/master/tools/install.sh)"
 ```
 
