@@ -37,6 +37,7 @@ mv ~/oh-my-zsh/ ~/.oh-my-zsh
 cp -r ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 chsh -s /bin/zsh
 zsh
+
 ```
 
 #### via wget
@@ -48,6 +49,7 @@ mv ~/oh-my-zsh/ ~/.oh-my-zsh
 cp -r ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 chsh -s /bin/zsh
 zsh
+
 ```
 
 ## Using Oh My Zsh
