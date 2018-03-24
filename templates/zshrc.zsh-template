@@ -79,7 +79,7 @@ alias gta='git tag -a -m'
 alias gf='git reflog'
 
 # leverage an alias from the ~/.gitconfig
- alias gh='git hist'
+alias gh='git hist'
 #
 
 # You may need to manually set your language environment
@@ -91,39 +91,6 @@ alias gf='git reflog'
 # else
 #   export EDITOR='mvim'
 # fi
-function is3license() {
-
-  signature=$1
-
-  old=${2:-\false}
-
-  cmd="curl -X POST -H \"Content-Type: application/json\" -d '{\"signature\":\"${1}\",\"old\":${old}}' http://172.16.1.166/is3license 2>/dev/null | python -c \"import json, sys; data = json.loads(''.join(sys.stdin.readlines())); print data['license'];\""
-
-  license=$(eval $cmd)
-
-  ret=$?
-
-  if [[ $ret -eq 0 ]]; then
-
-    echo -n "$license" | xclip -selection c
-
-    echo "License succefully copied into clipboard!"
-
-  else
-
-    echo "Can't get license! Sorry... =("
-
-  fi
-
-}
-
-
-
-function is3license-old() {
-
-  is3license "$1" true
-
-}
 
 
 # Compilation flags
