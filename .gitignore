@@ -1,5 +1,6 @@
-# custom files
-custom/
+locals.zsh
+log/.zsh_history
+projects.zsh
 !custom/plugins/example
 !custom/example.zsh
 

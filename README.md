@@ -20,8 +20,8 @@ To learn more, visit [ohmyz.sh](http://ohmyz.sh) and follow [@ohmyzsh](https://t
 
 __Disclaimer:__ _Oh My Zsh works best on macOS and Linux._
 
-* Unix-like operating system (macOS or Linux)
-* [Zsh](http://www.zsh.org) should be installed (v4.3.9 or more recent). If not pre-installed (`zsh --version` to confirm), check the following instruction here: [Installing ZSH](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH)
+* Unix-based operating system (OS X or Linux)
+* [Zsh](http://www.zsh.org) should be installed (v4.3.9 or more recent). If not pre-installed (`zsh --version` to confirm), check the following instruction here: [Installing ZSH](https://github.com/brusnigin/oh-my-zsh/wiki/Installing-ZSH)
 * `curl` or `wget` should be installed
 * `git` should be installed
 
@@ -30,22 +30,33 @@ __Disclaimer:__ _Oh My Zsh works best on macOS and Linux._
 Oh My Zsh is installed by running one of the following commands in your terminal. You can install this via the command-line with either `curl` or `wget`.
 
 #### via curl
-
 ```shell
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+yum install epel-release nload tcpdump zsh git vim bind-utils -y
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/brusnigin/oh-my-zsh/master/tools/install.sh)"
+mv ~/oh-my-zsh/ ~/.oh-my-zsh
+cp -r ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+chsh -s /bin/zsh
+zsh
+
 ```
 
 #### via wget
 
 ```shell
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+yum install epel-release nload tcpdump zsh git vim bind-utils -y
+sh -c "$(wget https://raw.githubusercontent.com/brusnigin/oh-my-zsh/master/tools/install.sh -O -)"
+mv ~/oh-my-zsh/ ~/.oh-my-zsh
+cp -r ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+chsh -s /bin/zsh
+zsh
+
 ```
 
 ## Using Oh My Zsh
 
 ### Plugins
 
-Oh My Zsh comes with a shitload of plugins to take advantage of. You can take a look in the [plugins](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins) directory and/or the [wiki](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins) to see what's currently available.
+Oh My Zsh comes with a shit load of plugins to take advantage of. You can take a look in the [plugins](https://github.com/brusnigin/oh-my-zsh/tree/master/plugins) directory and/or the [wiki](https://github.com/brusnigin/oh-my-zsh/wiki/Plugins) to see what's currently available.
 
 #### Enabling Plugins
 
@@ -141,7 +152,8 @@ export ZSH="$HOME/.dotfiles/oh-my-zsh"; sh -c "$(curl -fsSL https://raw.githubus
 ##### 1. Clone the repository:
 
 ```shell
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
+git clone https://github.com/brusnigin/oh-my-zsh.git ~/.oh-my-zsh
 ```
 
 ##### 2. *Optionally*, backup your existing `~/.zshrc` file:
