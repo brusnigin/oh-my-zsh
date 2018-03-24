@@ -33,10 +33,6 @@ Oh My Zsh is installed by running one of the following commands in your terminal
 ```shell
 yum install epel-release nload tcpdump zsh git vim bind-utils -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/brusnigin/oh-my-zsh/master/tools/install.sh)"
-mv ~/oh-my-zsh/ ~/.oh-my-zsh
-cp -r ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-chsh -s /bin/zsh
-zsh
 
 ```
 
@@ -45,10 +41,6 @@ zsh
 ```shell
 yum install epel-release nload tcpdump zsh git vim bind-utils -y
 sh -c "$(wget https://raw.githubusercontent.com/brusnigin/oh-my-zsh/master/tools/install.sh -O -)"
-mv ~/oh-my-zsh/ ~/.oh-my-zsh
-cp -r ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-chsh -s /bin/zsh
-zsh
 
 ```
 
