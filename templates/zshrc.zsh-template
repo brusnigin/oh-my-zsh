@@ -67,6 +67,7 @@ plugins=(
 	colorize
 	cp
 	colored-man-pages	
+	extract
 )
 
 
