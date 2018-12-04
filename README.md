@@ -31,7 +31,7 @@ Oh My Zsh is installed by running one of the following commands in your terminal
 
 #### via curl
 ```shell
-yum install epel-release nload tcpdump zsh git vim bind-utils python-pygments -y
+yum install epel-release nload tcpdump git bind-utils sysstat mtr tmux iftop ack nmap mpstat aria2 htop mc iotop strace -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/brusnigin/oh-my-zsh/master/tools/install.sh)"
 
 ```
@@ -39,7 +39,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/brusnigin/oh-my-zsh/master
 #### via wget
 
 ```shell
-yum install epel-release nload tcpdump zsh git vim bind-utils python-pygments -y
+yum install epel-release nload tcpdump git bind-utils sysstat mtr tmux iftop ack nmap mpstat aria2 htop mc iotop strace -y
 sh -c "$(wget https://raw.githubusercontent.com/brusnigin/oh-my-zsh/master/tools/install.sh -O -)"
 
 ```
